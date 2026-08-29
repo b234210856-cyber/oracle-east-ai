@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oracle East - AI Oracle Homepage Prototype</title>
+    <meta
+      name="description"
+      content="A high-end international AI Oracle homepage prototype blending Eastern mystic order and restrained luxury technology."
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260826-no-council-1" />
+  </head>
+  <body>
+    <canvas id="fieldCanvas" aria-hidden="true"></canvas>
+    <div class="page-aura" aria-hidden="true"></div>
+
+    <main class="site-shell">
+      <section class="hero" id="top">
+        <nav class="nav" aria-label="Primary navigation" data-i18n-aria="nav.aria">
+          <a class="brand" href="#top" aria-label="Oracle East home" data-i18n-aria="brand.aria">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>
+              <strong>ORACLE EAST</strong>
+              <small data-i18n="brand.small">太玄 · Machine Oracle</small>
+            </span>
+          </a>
+
+          <div class="nav-links" aria-label="Page sections" data-i18n-aria="nav.sections">
+            <a href="#ritual" data-i18n="nav.ritual">Ritual</a>
+            <a href="#signal" data-i18n="nav.signal">Signal</a>
+          </div>
+
+          <div class="nav-actions">
+            <div class="language-switch" aria-label="Language" data-i18n-aria="language.aria">
+              <button class="language-option is-active" type="button" data-lang="en" aria-pressed="true">
+                EN
+              </button>
+              <button class="language-option" type="button" data-lang="zh" aria-pressed="false">
+                中文
+              </button>
+            </div>
+
+            <button class="nav-status" type="button" id="focusMode">
+              <span aria-hidden="true"></span>
+              <b class="status-label">Signal Live</b>
+            </button>
+          </div>
+        </nav>
+
+        <div class="hero-oracle oracle-cockpit" id="ritual">
+          <section class="cockpit-copy" aria-label="Oracle East introduction">
+            <p class="eyebrow" data-i18n="hero.eyebrow">AI ORACLE SYSTEM / INTERNATIONAL PREVIEW</p>
+            <h1>ORACLE EAST</h1>
+            <p class="hero-line" data-i18n="hero.line">
+              Ancient symbolic order, translated by machine intuition.
+            </p>
+            <p class="hero-text" data-i18n="hero.text">
+              A restrained, cinematic oracle interface for identity, decision,
+              and timing. Built as a luxury technology ritual for serious
+              self-inquiry.
+            </p>
+
+            <div class="signal-strip cockpit-signal" id="signal">
+              <span data-i18n="signal.heaven">Heaven</span>
+              <i aria-hidden="true"></i>
+              <span data-i18n="signal.earth">Earth</span>
+              <i aria-hidden="true"></i>
+              <span data-i18n="signal.human">Human</span>
+              <i aria-hidden="true"></i>
+              <span data-i18n="signal.machine">Machine</span>
+            </div>
+          </section>
+
+          <aside class="entry-panel" aria-label="Core oracle entries" data-i18n-aria="entries.aria">
+            <div class="entry-grid compass-entry-grid">
+              <button
+                class="entry-card is-active"
+                type="button"
+                data-entry="identity"
+                aria-pressed="true"
+              >
+                <span>01</span>
+                <strong>Who am I</strong>
+                <small>Decode temperament, inner pattern, and personal myth.</small>
+              </button>
+              <button
+                class="entry-card"
+                type="button"
+                data-entry="action"
+                aria-pressed="false"
+              >
+                <span>02</span>
+                <strong>What should I do</strong>
+                <small>Translate uncertainty into a disciplined next move.</small>
+              </button>
+              <button
+                class="entry-card"
+                type="button"
+                data-entry="timing"
+                aria-pressed="false"
+              >
+                <span>03</span>
+                <strong>When</strong>
+                <small>Read cycles, momentum, and the proper window.</small>
+              </button>
+            </div>
+          </aside>
+
+          <section class="oracle-stage cockpit-stage" aria-label="Dynamic oracle compass" data-i18n-aria="oracle.aria">
+            <div class="instrument-frame">
+              <canvas id="mandalaCanvas"></canvas>
+              <div class="instrument-scanner" aria-hidden="true"></div>
+              <div class="instrument-axis axis-vertical" aria-hidden="true"></div>
+              <div class="instrument-axis axis-horizontal" aria-hidden="true"></div>
+
+              <div class="instrument-orbit orbit-a" aria-hidden="true"></div>
+              <div class="instrument-orbit orbit-b" aria-hidden="true"></div>
+              <div class="instrument-orbit orbit-c" aria-hidden="true"></div>
+            </div>
+
+            <div class="compass-diagnostics" aria-live="polite">
+              <div class="compass-tag tag-bearing">
+                <span data-i18n="compass.direction">Signal direction</span>
+                <strong id="compassBearing">312° · Qian</strong>
+              </div>
+              <div class="compass-tag tag-hour">
+                <span data-i18n="compass.hour">Hour gate</span>
+                <strong id="compassHour">Yin hour · 03:48</strong>
+              </div>
+              <div class="compass-tag tag-element">
+                <span data-i18n="compass.element">Element field</span>
+                <strong id="compassElements">Wood 31 · Metal 27</strong>
+              </div>
+              <div class="compass-tag tag-palace">
+                <span data-i18n="compass.palace">Palace</span>
+                <strong id="compassPalace">Origin palace</strong>
+              </div>
+            </div>
+          </section>
+
+          <aside class="reading-panel compass-reading" aria-live="polite">
+            <div class="side-entry-summary">
+              <span id="coreIndex">01</span>
+              <div>
+                <strong id="coreTitle">Who am I</strong>
+                <small id="coreCaption">Identity architecture</small>
+              </div>
+            </div>
+
+            <div class="instrument-core side-input-console">
+              <p class="form-kicker" data-i18n="ritual.eyebrow">Birth signature input</p>
+              <form class="birth-form compass-form" id="birthForm">
+                <label>
+                  <span data-i18n="form.date">Birth date</span>
+                  <input type="date" name="date" value="1994-09-21" />
+                </label>
+
+                <label>
+                  <span data-i18n="form.time">Birth time</span>
+                  <input type="time" name="time" value="03:48" />
+                </label>
+
+                <label>
+                  <span data-i18n="form.place">Birthplace</span>
+                  <input
+                    type="text"
+                    name="place"
+                    value="Shanghai"
+                    placeholder="City / Region"
+                    autocomplete="off"
+                    data-i18n-placeholder="form.placePlaceholder"
+                  />
+                </label>
+
+                <label>
+                  <span data-i18n="form.inquiry">Inquiry</span>
+                  <select name="inquiry">
+                    <option value="identity">Who am I</option>
+                    <option value="action">What should I do</option>
+                    <option value="timing">When</option>
+                  </select>
+                </label>
+
+                <button class="primary-action form-action" type="submit" data-i18n="form.submit">
+                  Generate Reading
+                </button>
+              </form>
+            </div>
+
+            <div class="reading-topline">
+              <span data-i18n="reading.seed">Oracle Seed</span>
+              <strong id="oracleSeed">QIAN-21-0348</strong>
+              <em id="readingCycle">Cycle 00</em>
+            </div>
+            <div class="reading-ring" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <p class="reading-status" id="readingStatus">Awaiting first signal</p>
+            <dl class="reading-list">
+              <div>
+                <dt data-i18n="reading.pattern">Dominant pattern</dt>
+                <dd id="patternText">Rising Wood / Clear Metal</dd>
+              </div>
+              <div>
+                <dt data-i18n="reading.tone">Council tone</dt>
+                <dd id="toneText">Precise, quiet, unsentimental</dd>
+              </div>
+              <div>
+                <dt data-i18n="reading.window">Next window</dt>
+                <dd id="windowText">Begin before the next threshold</dd>
+              </div>
+            </dl>
+            <div class="instrument-note">
+              <span data-i18n="oracle.current">Current inquiry</span>
+              <strong id="activeQuestion">Mirror of origin</strong>
+              <button class="detail-action" type="button" id="openDetails" data-i18n="detail.open">
+                View Detailed Reading
+              </button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <div class="detail-modal" id="detailModal" hidden>
+      <div class="detail-backdrop" data-close-details></div>
+      <section
+        class="detail-sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="detailTitle"
+      >
+        <button class="modal-close" type="button" id="closeDetails" aria-label="Close" data-i18n-aria="detail.closeAria">
+          ×
+        </button>
+        <p class="eyebrow" data-i18n="detail.eyebrow">SECOND LAYER READING</p>
+        <h2 id="detailTitle" data-i18n="detail.title">Council interpretation</h2>
+        <p class="detail-lead" id="detailLead">
+          Generate a reading first; the second layer will open with a structured
+          interpretation.
+        </p>
+        <div class="detail-grid">
+          <article>
+            <span data-i18n="detail.identityLabel">Identity</span>
+            <strong id="detailIdentity">-</strong>
+          </article>
+          <article>
+            <span data-i18n="detail.actionLabel">Action</span>
+            <strong id="detailAction">-</strong>
+          </article>
+          <article>
+            <span data-i18n="detail.timingLabel">Timing</span>
+            <strong id="detailTiming">-</strong>
+          </article>
+        </div>
+        <div class="detail-council">
+          <p data-i18n="detail.councilLabel">Council trace</p>
+          <ol id="detailCouncilList">
+            <li>The Architect maps the question into structure.</li>
+            <li>The Strategist names one disciplined move.</li>
+            <li>The Timing Engine weighs the correct window.</li>
+          </ol>
+        </div>
+      </section>
+    </div>
+
+    <script src="./script.js?v=20260826-no-council-1"></script>
+  </body>
+</html>
